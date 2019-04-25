@@ -50,6 +50,7 @@ console.log(cards[cardId].suit);
 }
 
 
+
 function createBoard() {
 	for (var i = 0; i < cards.length; i++) {
 		var cardElement = document.createElement('img');
@@ -60,3 +61,19 @@ function createBoard() {
 	}
 }
 createBoard();
+
+ var resetBoard = function() {
+	//loop through cards
+	for (var i = 0; i < cards.length; i++){
+		//get the cards
+		var turnCards = document.getElementByTag('img');
+		//turn back to the original image
+		turnCards.setAttribute("src", "images/back.png");
+	}
+}
+resetBoard();
+
+var resetButton = document.querySelector('button');
+resetButton.addEventLister('click', resetBoard);
+
+
